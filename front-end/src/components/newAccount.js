@@ -11,7 +11,7 @@ const NewAccountForm = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    let userAuth = { username: values.username, password: values.password, email: values.email, full_name: values.full_name }
+    let userAuth = { username: values.username, password: values.password, email: values.email}
     // axiosWithAuth()
     //   .post(, userAuth)
     //   .then(res => {
@@ -60,16 +60,7 @@ const NewAccountForm = (props) => {
             {touched.email && errors.email && <p color="danger">{errors.email}</p>}
             <br />
             <br />
-            <span className='form-align'>Full Name:</span><br />
-            <Field
-              type="text"
-              name="full_name"
-              placeholder="full name"
-              value={values.full_name}
-            />
-            {touched.full_name && errors.full_name && <p color="danger">{errors.full_name}</p>}
-            <br />
-            <br />
+
             <button>Sign Up</button>{' '}
             <br />
             <br />
@@ -81,11 +72,11 @@ const NewAccountForm = (props) => {
 };
 
 const EnchanedNewAccountForm = withFormik({
-  mapPropsToValues: ({ username, password, email, full_name }) => ({
+  mapPropsToValues: ({ username, password, email }) => ({
     username: username || "",
     password: password || "",
     email: email || "",
-    full_name: full_name || "",
+
   }),
 
   validationSchema: Yup.object().shape({
@@ -103,10 +94,6 @@ const EnchanedNewAccountForm = withFormik({
       .max(30, 'Email must be shorter than 30 symbols')
       .required('Email is required!'),
 
-    full_name: Yup.string()
-      .min(2, 'Invalid Name')
-      .max(30, 'Name must be shorter than 30 symbols')
-      .required('Name is required!'),
   })
 })(NewAccountForm);
 
