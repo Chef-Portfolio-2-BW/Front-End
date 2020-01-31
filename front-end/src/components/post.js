@@ -1,74 +1,83 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const initialState = {
-  id: "",
-  name: "",
-  chef: "",
-  ingredience: "",
-  directions: ""
-};
+class Post extends React.Component {
+  state = {
+    recipe: {
+      name: "",
+      catagory: "",
+      img: "",
+      ingredients: "",
+      directions: ""
+    },
+    isFetching: false
+  };
 
-const CreatePost = props => {
-  const [update, setUpdate] = useState(initialState);
+  handleChange = e => {
+    this.setState({
+      recipe: {
+        ...this.state.recipe,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
 
-  //   useEffect(() => {
-  //     axios
-  //       .get(`http://localhost:5000/api/movies/${props.match.params.id}`)
-  //       .then(response => setUpdate(response.data))
+  post = e => {
+    e.preventDefault();
+    this.setState({
+      isFetching: true
+    });
+    //axios goes here
+  };
 
-  //       .catch(error => console.log(error));
-  //   }, [props.match.params.id]);
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.post}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Recipie Name"
+            value={this.state.recipe.name}
+            onChange={this.handleChange}
+          />
 
-  //   const changeHandler = e => {
-  //     setUpdate({ ...update, [e.target.name]: e.target.value });
-  //   };
+          <input
+            type="text"
+            name="catagory"
+            placeholder="Catagory"
+            value={this.state.recipe.catagory}
+            onChange={this.handleChange}
+          />
 
-  //   const handleSubmit = e => {
-  //     e.preventDefault();
+          <input
+            type="text"
+            name="img"
+            placeholder="Image Link"
+            value={this.state.recipe.img}
+            onChange={this.handleChange}
+          />
 
-  //     axios
-  //       .put(`http://localhost:5000/api/movies/${update.id}`, update)
-  //       .then(response => {
-  //         props.history.push(`/movies/${update.id}`);
-  //       })
-  //       .catch(err => console.log(err));
-  //   };
+          <input
+            type="text"
+            name="ingredients"
+            placeholder="Ingredients"
+            value={this.state.recipe.ingredients}
+            onChange={this.handleChange}
+          />
 
-  return (
-    <div>
-      <form>
-        <input
-          type="text"
-          name="recipie name"
-          placeholder="Recipie Name"
-          value={update.name}
-        />
+          <input
+            type="text"
+            name="directions"
+            placeholder="Directions"
+            value={this.state.recipe.directions}
+            onChange={this.handleChange}
+          />
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Chef Name"
-          value={update.chef}
-        />
-
-        <input
-          type="text"
-          name="ingredience"
-          placeholder="Ingredience"
-          value={update.ingredience}
-        />
-
-        <input
-          type="text"
-          name="directions"
-          placeholder="Directions"
-          value={update.directions}
-        />
-
-        <button> Post </button>
-      </form>
-    </div>
-  );
-};
-export default CreatePost;
+          <button> Post </button>
+        </form>
+      </div>
+    );
+  }
+}
+export default Post;

@@ -7,11 +7,7 @@ import CreatePost from "./components/post";
 import "./App.css";
 
 const App = props => {
-  return (
-    <div className="App">
-      <CreatePost />
-    </div>
-  );
+  return <div className="App"></div>;
 };
 
 export default App;
