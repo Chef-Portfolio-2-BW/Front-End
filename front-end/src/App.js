@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import PrivateRoute from './components/privateRoute.js';
+import PrivateRoute from "./components/privateRoute.js";
 
-import './App.css';
+import CreatePost from "./components/post";
 
-const App = (props) => {
-  return (
-    <div className="App">
+import "./App.css";
 
-    </div>
-  );
-}
+const App = props => {
+  return <div className="App"></div>;
+};
 
 export default App;
