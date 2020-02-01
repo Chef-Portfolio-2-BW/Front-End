@@ -4,14 +4,15 @@ import PrivateRoute from "./components/privateRoute.js";
 
 
 import './App.css';
-import HomePage from './components/HomePage.js';
+import HomePage from './components/homePage.js';
+import FormikLoginForm from './components/LoginForm.js';
 
 
 
 
 
 const App = props => {
-  return <div className="App"></div>;
+  return <div className="App"><FormikLoginForm /><HomePage /></div>;
 };
 
 
