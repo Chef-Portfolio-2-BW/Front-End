@@ -1,5 +1,6 @@
 import React from "react";
-import axios from "axios";
+
+import { axiosWithAuth } from './axiosAuth';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
@@ -12,10 +13,11 @@ const NewAccountForm = (props) => {
   const handleSubmit = event => {
     event.preventDefault();
     let userAuth = { username: values.username, password: values.password, email: values.email}
-    axios
+    axiosWithAuth()
       .post('https://bwchefhub.herokuapp.com/api/auth/register', userAuth)
       .then(res => {
         console.log(res)
+        props.history.push('/');
       })
       .catch(err => {
         console.log(err);
@@ -61,7 +63,7 @@ const NewAccountForm = (props) => {
             <br />
             <br />
 
-            <button>Sign Up</button>{' '}
+            <button>Sign Up</button>
             <br />
             <br />
           </Form>

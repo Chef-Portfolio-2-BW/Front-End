@@ -1,12 +1,12 @@
 import React from "react";
-import axios from 'axios';
-// import {Button} from 'react-strap';
+import {axiosWithAuth} from './axiosAuth.js';
+
 
 
 const Test = (props) =>{
 
   const getRecipes = () =>{
-    axios
+    axiosWithAuth()
       .get('https://bwchefhub.herokuapp.com/api/recipes')
       .then(res => {
         console.log('recipes data: ', res)

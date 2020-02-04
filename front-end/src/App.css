@@ -8,9 +8,15 @@
 .nav-link{
   color: white;
   text-decoration: none;
-  font-weight: lighter;
 }
 .nav-link:hover{
   text-shadow: 0 0 10px #fd9827;
 };
 
+.carousel{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
