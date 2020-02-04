@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 
-import Banner from "./Banner";
+import Carousel from './Carousel';
 
 const MainSectionContent = styled.section`
     margin-top: 0.5%;
@@ -9,7 +9,7 @@ const MainSectionContent = styled.section`
     margin-right: 2%;
     margin-bottom: 0.5%;
     padding: 0.5%;
-    max-width: 1000px;
+    width: 90%;
     background-color: black;
     color: white;
     display: flex;
@@ -37,7 +37,7 @@ export default function MainSection () {
                 <h1>
                     Welcome to ChefHub!
                 </h1>
-                <Banner />
+                <Carousel />
                 <Paragraph>
                 Bringing amateur and professional chefs together, in one kitchen.
                 </Paragraph>

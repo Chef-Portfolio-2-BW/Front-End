@@ -12,7 +12,9 @@ import FormikLoginForm from './components/LoginForm.js';
 
 
 const App = props => {
-  return <div className="App"><FormikLoginForm /><HomePage /></div>;
+
+  return <div className="App"><HomePage /></div>;
+
 };
 
 

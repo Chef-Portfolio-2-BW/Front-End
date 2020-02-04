@@ -13,8 +13,8 @@ const LinkContainer= styled.div`
 export default function Nav () {
     return (
         <LinkContainer>
-            <Link class='nav-link' to={'/login'}>Login </Link>
-            <Link class='nav-link' to={'/signup'}>Sign Up</Link>
+            <Link className='nav-link' to={'/login'}>Login </Link>
+            <Link className='nav-link' to={'/signup'}>Sign Up</Link>
         </LinkContainer>
     )
 }
