@@ -5,8 +5,10 @@ import PrivateRoute from "./components/privateRoute.js";
 import NewAccount from './components/newAccount.js';
 import './App.css';
 import HomePage from './components/homePage.js';
-import Test from './components/test.js';
+
+
 import RecipeListMain from './components/recipeListMain.js';
+
 
 
 
@@ -19,13 +21,9 @@ const App = props => {
     <Route exact path="/signup" component={NewAccount} />
 
 
-
-
-
-
   </div>;
-};
 
+}
 
 
 export default App;
