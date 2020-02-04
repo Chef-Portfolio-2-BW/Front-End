@@ -56,3 +56,24 @@ code {
   text-align: left;
 
 }
+.recipe-list-main{
+
+  width:80%;
+  margin: 20px 10%;
+  color:white;
+
+}
+.recipe-card-main{
+  width:20%;
+  margin: 20px;
+  background-color: black;
+  border: 2px solid #fd9827;
+  border-radius: 10px;
+  color:white;
+}
+
+.fix{
+  display: flex;
+  width: 90%;
+  margin: 20px 5%;
+}

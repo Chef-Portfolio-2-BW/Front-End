@@ -7,7 +7,7 @@ import MainSection from './MainSection';
 import Footer from './Footer';
 
 const Body = styled.div`
-    background: white;
+    background: #40566B;
 `
 
 

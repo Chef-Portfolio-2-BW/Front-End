@@ -33,6 +33,7 @@ export default function Footer () {
             <Link class='nav-link' to={'/login'}>Login </Link>
             <Link class='nav-link' to={'/signup'}>Sign Up</Link>
         </LinkContainer>
+
         <Copyright>
             Copyright ChefHub 2020, All Rights Reserved.
             </Copyright>
