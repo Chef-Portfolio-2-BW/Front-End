@@ -29,10 +29,10 @@ export default function Footer () {
             <Link class='nav-link' to={'/login'}>Login </Link>
             <Link class='nav-link' to={'/signup'}>Sign Up</Link>
         </LinkContainer>
-        ReactDOM.render(<SocialIcon url="http://facebook.com" />, document.body);
-        ReactDOM.render(<SocialIcon url="http://twitter.com" />, document.body);
-        ReactDOM.render(<SocialIcon url="http://instagram.com" />, document.body);
-        ReactDOM.render(<SocialIcon url="http://googleplus.com" />, document.body);
+        <SocialIcon url="http://facebook.com" />
+        <SocialIcon url="http://twitter.com" />
+        <SocialIcon url="http://instagram.com" />
+        <SocialIcon url="http://googleplus.com" />
 
         <Copyright>
             Copyright ChefHub 2020, All Rights Reserved.
