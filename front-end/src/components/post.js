@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import "./post.css";
+
 class Post extends React.Component {
   state = {
     recipe: {
@@ -28,12 +30,14 @@ class Post extends React.Component {
       isFetching: true
     });
     //axios goes here
+    console.log(this.state);
   };
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.post}>
+      <div className="postWrap">
+        <h1>Enter all the details for your recipe</h1>
+        <form className="formStyle" onSubmit={this.post}>
           <input
             type="text"
             name="name"
@@ -59,7 +63,7 @@ class Post extends React.Component {
           />
 
           <input
-            type="text"
+            type="textarea"
             name="ingredients"
             placeholder="Ingredients"
             value={this.state.recipe.ingredients}
@@ -67,7 +71,7 @@ class Post extends React.Component {
           />
 
           <input
-            type="text"
+            type="textarea"
             name="directions"
             placeholder="Directions"
             value={this.state.recipe.directions}
