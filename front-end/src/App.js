@@ -11,7 +11,7 @@ import HomePage from './components/HomePage.js';
 
 
 const App = props => {
-  return <div className="App"></div>;
+  return <div className="App"><HomePage /></div>;
 };
 
 
