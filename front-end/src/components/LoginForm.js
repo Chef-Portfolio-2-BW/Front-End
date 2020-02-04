@@ -34,7 +34,7 @@ const SubmitButton = styled.button`
     margin-left: 1rem;
 `
 
-function LoginForm({ values, errors, touched, isSubmitting }) {
+const LoginForm({ values, errors, touched, isSubmitting }) => {
     return (
         <Form>
             <LoginFormWrapper>
@@ -64,7 +64,7 @@ const FormikLoginForm = withFormik({
             .min(10, "Username is not valid")
             .required("Username is required"),
         password: Yup.string()
-            .min(10, "Password must be 10 chracters or longer")
+            .min(10, "Password must be 10 characters or longer")
             .required("Password is required")
     }),
     handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
@@ -76,7 +76,7 @@ const FormikLoginForm = withFormik({
                 .then(res => {
                     console.log(res);
                     resetForm();
-                    setSubmitting(false);
+                    setSubmitting(false);-
                 })
                 .catch(err => {
                     console.log(err); // There was an error creating the data and logs to console
