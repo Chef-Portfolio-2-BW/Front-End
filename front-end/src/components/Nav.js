@@ -8,6 +8,7 @@ const LinkContainer= styled.div`
     justify-content: space-evenly;
     align-items: flex-end;
     background: black;
+    margin-bottom: 1%;
 `
 
 export default function Nav () {

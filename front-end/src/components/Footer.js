@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import { Link } from 'react-router-dom';
 import SocialLinks from './SocialLinks';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const LinkContainer = styled.div`
     display: flex;
@@ -21,8 +20,10 @@ const Copyright = styled.p`
 const FooterContainer = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     background: black;
+    margin-top: 1%;
 `
 
 export default function Footer () {
@@ -33,7 +34,6 @@ export default function Footer () {
             <Link class='nav-link' to={'/login'}>Login </Link>
             <Link class='nav-link' to={'/signup'}>Sign Up</Link>
         </LinkContainer>
-
         <Copyright>
             Copyright ChefHub 2020, All Rights Reserved.
             </Copyright>
