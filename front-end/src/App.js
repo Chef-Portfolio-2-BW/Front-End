@@ -12,6 +12,10 @@ import Footer from './components/Footer';
 import LoginForm from './components/LoginForm';
 
 
+import RecipeListMain from './components/recipeListMain.js';
+import RecipeDetail from './components/RecipeDetail.js';
+
+
 
 
 
@@ -25,6 +29,7 @@ const App = props => {
           <Route exact path="/signup" component={NewAccount} />
         </Switch>
       <Footer />
+
   </div>;
 
 }
