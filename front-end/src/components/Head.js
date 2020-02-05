@@ -2,14 +2,14 @@ import React from 'react';
 import styled from "styled-components";
 
 const Head = styled.div`
-    // margin-bottom: 2%;
+    padding-top: 1%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background: black;
 `
 const Logo = styled.img`
-    width: 175px;
+    width: 250px;
 `
 
 export default function Header() {

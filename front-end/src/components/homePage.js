@@ -1,23 +1,66 @@
 import React from 'react';
 import styled from "styled-components";
 
-import Head from './Head';
-import Nav from './Nav';
-import MainSection from './MainSection';
-import Footer from './Footer';
+import Carousel from './Carousel';
+import RecipeListMain from './recipeListMain';
 
-const Body = styled.div`
-    background: #40566B;
+const MainSectionContent = styled.section`
+    margin-top: 0.5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 0.5%;
+    padding: 0.5%;
+    width: 90%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid #fd9827;
 `
 
 
-export default function HomePage() {
+const MainSectionContainer = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+`
+const Paragraph = styled.p`
+    font-style: italic;
+`
+
+export default function HomePage () {
     return (
-        <Body>
-        <Head />
-        <Nav />
-        <MainSection />
-        <Footer />
-        </Body>
+        <MainSectionContainer>
+            <MainSectionContent>
+                <h1>
+                    Welcome to ChefHub!
+                </h1>
+                <Carousel />
+                <Paragraph>
+                Bringing amateur and professional chefs together, in one kitchen.
+                </Paragraph>
+            </MainSectionContent>
+            <RecipeListMain />
+        </MainSectionContainer>
     )
 }
+
+
+
+
+// export default function HomePage() {
+//     return (
+//         <Body>
+//         <Head />
+//         <Nav />
+//         <MainSection />
+//         <Footer />
+//         </Body>
+//     )
+// }
+
+

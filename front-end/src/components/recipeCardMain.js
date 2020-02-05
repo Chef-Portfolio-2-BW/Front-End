@@ -7,12 +7,15 @@ const RecipeCardMain = (props) =>{
 
   return(
     <Card className="recipe-card-main">
+      <div className='card-img-container'>
       <CardImg top width="100%" src={props.img} alt={props.name} />
+      </div>
       <CardBody>
+        <div className='card-container'>
         <CardTitle>{props.name}</CardTitle>
-        <CardSubtitle>by:{props.username}</CardSubtitle>
-        
+        <CardSubtitle>By: {props.username}</CardSubtitle>
         <Button>See It!</Button>
+        </div>
       </CardBody>
     </Card>
 )
