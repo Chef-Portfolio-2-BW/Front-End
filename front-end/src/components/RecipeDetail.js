@@ -17,7 +17,9 @@ function RecipeDetail() {
             <img src={item.img} alt="{item.img}" />
             <h1>{item.name}</h1>
             <p>By: {item.username}</p>
-            <p>{item.type}</p>
+            <p>Category: {item.category}</p>
+            <p>Ingredients: {item.ingredients}</p>
+            <p>Instructions: {item.instructions}</p>
         </div>
     );
 }
