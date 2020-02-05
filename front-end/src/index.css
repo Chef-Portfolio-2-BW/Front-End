@@ -63,13 +63,18 @@ code {
   color:white;
 
 }
-.recipe-card-main{
-  width:20%;
+.recipe-card-main {
+  width:23%;
   margin: 20px;
   background-color: black;
   border: 2px solid #fd9827;
   border-radius: 10px;
   color:white;
+}
+.recipe-card-main img{
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  height: 250px;
 }
 
 .fix{
