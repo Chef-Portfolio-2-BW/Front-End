@@ -8,6 +8,7 @@ import HomePage from './components/homePage.js';
 
 
 import RecipeListMain from './components/recipeListMain.js';
+import RecipeDetail from './components/RecipeDetail.js';
 
 
 
@@ -15,10 +16,11 @@ import RecipeListMain from './components/recipeListMain.js';
 const App = props => {
   return <div className="App">
   
-
-    <Route exact path='/' component={HomePage} />
+    <Route exact path ='/:id' render= {props =>
+    <RecipeDetail {...props} />} />
+    {/* <Route exact path='/' component={HomePage} />
     <Route exact path='/' component={RecipeListMain} />
-    <Route exact path="/signup" component={NewAccount} />
+    <Route exact path="/signup" component={NewAccount} /> */}
 
 
   </div>;
