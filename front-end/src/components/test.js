@@ -7,7 +7,7 @@ const Test = (props) =>{
 
   const getRecipes = () =>{
     axiosWithAuth()
-      .get('https://bwchefhub.herokuapp.com/api/recipes')
+      .get('https://bwchefhub.herokuapp.com/api/recipes/myrecipes')
       .then(res => {
         console.log('recipes data: ', res)
       })

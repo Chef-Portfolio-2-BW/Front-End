@@ -1,9 +1,9 @@
 import React from 'react'
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from "yup";
-import axios from 'axios';
-import styled from "styled-components";
 
+import styled from "styled-components";
+import { axiosWithAuth } from './axiosAuth.js';
 
 
 const LoginFormWrapper = styled.div`
@@ -25,18 +25,41 @@ const PasswordField = styled.div`
 `
 
 const SubmitButton = styled.button`
-    padding:5px 15px; 
-    background-color:#fd9827; 
+    padding:5px 15px;
+    background-color:#fd9827;
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     margin-left: 1rem;
 `
 
-const LoginForm({ values, errors, touched, isSubmitting }) => {
+
+const LoginForm = (props) => {
+
+  const {values, errors, touched, isSubmitting } = props;
+
+  const handleSubmit = (event) => {
+    let login = ({username:values.username, password:values.password})
+    event.preventDefault();
+      axiosWithAuth()
+        .post("https://bwchefhub.herokuapp.com/api/auth/login", values)
+        .then(res => {
+            console.log(res);
+
+            localStorage.setItem('token', res.data.token);
+            props.history.push('/profile');
+
+        })
+        .catch(err => {
+            console.log(err); // There was an error creating the data and logs to console
+
+        });
+    }
+
+
     return (
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <LoginFormWrapper>
                 <UsernameField>
                     {touched.username && errors.username && <p>{errors.username}</p>}
@@ -61,30 +84,18 @@ const FormikLoginForm = withFormik({
     },
     validationSchema: Yup.object().shape({
         username: Yup.string()
-            .min(10, "Username is not valid")
+            .max(20, "Username is not valid")
             .required("Username is required"),
         password: Yup.string()
-            .min(10, "Password must be 10 characters or longer")
+
+            .min(8, "Password must be 10 chracters or longer")
+            .max(15, "Password is too long")
             .required("Password is required")
     }),
-    handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-        if (values.username === "alreadytaken@atb.dev") {
-            setErrors({ username: "That username is already taken" });
-        } else {
-            axios
-                .post("https://INSERT-HERE.com", values)
-                .then(res => {
-                    console.log(res);
-                    resetForm();
-                    setSubmitting(false);-
-                })
-                .catch(err => {
-                    console.log(err); // There was an error creating the data and logs to console
-                    setSubmitting(false);
-                });
-        }
-    }
-})(LoginForm);
+
+}
+)(LoginForm);
+
 
 
 export default FormikLoginForm;

@@ -63,11 +63,13 @@ code {
   color:white;
 
 }
+
 .recipe-card-main{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 40%;
+
   margin: 20px;
   background-color: black;
   border: 2px solid #fd9827;
@@ -75,10 +77,12 @@ code {
   color:white;
 }
 .recipe-card-main img{
+
   border-radius: 7px 7px 0 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+
 }
 
 .fix{

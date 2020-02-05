@@ -87,8 +87,8 @@ const EnchanedNewAccountForm = withFormik({
       .required('Username is requred'),
 
     password: Yup.string()
-      .min(2, 'Invalid Password')
-      .max(10, 'Password must be shorter than 10 symbols')
+      .min(8, 'Invalid Password')
+      .max(15, 'Password must be shorter than 10 symbols')
       .required('Password is required!'),
 
     email: Yup.string()
