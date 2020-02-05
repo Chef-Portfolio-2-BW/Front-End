@@ -34,6 +34,7 @@ const SubmitButton = styled.button`
     margin-left: 1rem;
 `
 
+
 const LoginForm = (props) => {
 
   const {values, errors, touched, isSubmitting } = props;
@@ -55,6 +56,7 @@ const LoginForm = (props) => {
 
         });
     }
+
 
     return (
         <Form onSubmit={handleSubmit}>
@@ -85,6 +87,7 @@ const FormikLoginForm = withFormik({
             .max(20, "Username is not valid")
             .required("Username is required"),
         password: Yup.string()
+
             .min(8, "Password must be 10 chracters or longer")
             .max(15, "Password is too long")
             .required("Password is required")
@@ -92,6 +95,7 @@ const FormikLoginForm = withFormik({
 
 }
 )(LoginForm);
+
 
 
 export default FormikLoginForm;

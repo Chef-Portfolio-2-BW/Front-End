@@ -1,14 +1,24 @@
+
 import React, { useState, useEffect } from "react";
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+
 import PrivateRoute from "./components/privateRoute.js";
 
 import NewAccount from './components/newAccount.js';
 import './App.css';
 import HomePage from './components/homePage.js';
+import Head from './components/Head';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+
+import LoginForm from './components/LoginForm';
 
 import Test from './components/test.js';
 import RecipeListMain from './components/recipeListMain.js';
+
 import FormikLoginForm from './components/LoginForm.js';
+
+import RecipeDetail from './components/RecipeDetail.js';
 
 import decode from 'jwt-decode';
 // const token = req.headers.authorization
@@ -39,18 +49,14 @@ const App = props => {
 
   return <div className="App">
 
-
-    <Route exact path='/' component={HomePage} />
-    <Route exact path='/' component={RecipeListMain} />
-
-    <Route exact path='/signup' render={props=>
-      <NewAccount {...props} />} />
-
-    <Route exact path='/login' render={props=>
-      <FormikLoginForm {...props} /> }
-    />
-
-    <PrivateRoute path='/profile' component={Test} />
+      <Head />
+      <Nav />
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/Login' component={LoginForm} />
+          <Route exact path="/signup" component={NewAccount} />
+        </Switch>
+      <Footer />
 
 
   </div>;
