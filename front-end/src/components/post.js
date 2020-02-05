@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { axiosWithAuth } from "./axiosAuth";
 
 import "./post.css";
 
@@ -10,7 +10,7 @@ class Post extends React.Component {
       catagory: "",
       img: "",
       ingredients: "",
-      directions: ""
+      instructions: ""
     },
     isFetching: false
   };
@@ -31,6 +31,14 @@ class Post extends React.Component {
     });
     //axios goes here
     console.log(this.state);
+    axiosWithAuth
+      .post("https://bwchefhub.herokuapp.com/api/recipies", this.state)
+      .then(res => {
+        console.log(res.data);
+        this.setState({ recipe: [...res.data, res.data.payload] });
+        this.props.history.push("/protected");
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -72,9 +80,9 @@ class Post extends React.Component {
 
           <input
             type="textarea"
-            name="directions"
-            placeholder="Directions"
-            value={this.state.recipe.directions}
+            name="instructions"
+            placeholder="Instructions"
+            value={this.state.recipe.instructions}
             onChange={this.handleChange}
           />
 
