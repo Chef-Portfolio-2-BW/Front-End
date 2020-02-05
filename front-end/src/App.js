@@ -12,8 +12,6 @@ import Footer from './components/Footer';
 import LoginForm from './components/LoginForm';
 
 
-import RecipeListMain from './components/recipeListMain.js';
-
 
 
 
@@ -21,12 +19,11 @@ const App = props => {
   return <div className="App">
       <Head />
       <Nav />
-      <Switch>
+        <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route exact path='/' component={RecipeListMain} />
           <Route exact path='/Login' component={LoginForm} />
           <Route exact path="/signup" component={NewAccount} />
-          </Switch>
+        </Switch>
       <Footer />
   </div>;
 

@@ -30,10 +30,10 @@ export default function Footer () {
     return (
         <FooterContainer>
         <SocialLinks/>
-        <LinkContainer>
-            <Link class='nav-link' to={'/login'}>Login </Link>
-            <Link class='nav-link' to={'/signup'}>Sign Up</Link>
-        </LinkContainer>
+        {/* <LinkContainer>
+            <Link className='nav-link' to={'/login'}>Login </Link>
+            <Link className='nav-link' to={'/signup'}>Sign Up</Link>
+        </LinkContainer> */}
         <Copyright>
             Copyright ChefHub 2020, All Rights Reserved.
             </Copyright>

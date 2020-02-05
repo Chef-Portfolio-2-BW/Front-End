@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 
 import Carousel from './Carousel';
+import RecipeListMain from './recipeListMain';
 
 const MainSectionContent = styled.section`
     margin-top: 0.5%;
@@ -23,6 +24,7 @@ const MainSectionContent = styled.section`
 
 const MainSectionContainer = styled.section`
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 `
@@ -42,6 +44,7 @@ export default function HomePage () {
                 Bringing amateur and professional chefs together, in one kitchen.
                 </Paragraph>
             </MainSectionContent>
+            <RecipeListMain />
         </MainSectionContainer>
     )
 }

@@ -5,8 +5,7 @@ import styled from "styled-components";
 const LinkContainer= styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-end;
+    justify-content: flex-end;
     background: black;
     margin-bottom: 1%;
 `
@@ -14,6 +13,7 @@ const LinkContainer= styled.div`
 export default function Nav () {
     return (
         <LinkContainer>
+            <Link className='nav-link' to={'/'}>Home</Link>
             <Link className='nav-link' to={'/login'}>Login </Link>
             <Link className='nav-link' to={'/signup'}>Sign Up</Link>
         </LinkContainer>
