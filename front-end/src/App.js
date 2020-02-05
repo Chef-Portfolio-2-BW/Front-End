@@ -50,11 +50,25 @@ const App = props => {
   return <div className="App">
 
       <Head />
-      <Nav />
+      <Nav currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route exact path='/Login' component={LoginForm} />
-          <Route exact path="/signup" component={NewAccount} />
+          <Route exact path='/' render={props=>(
+              <HomePage {...props} />
+            )}
+          />
+          <Route exact path='/Login' render={props =>(
+             <LoginForm {...props} setCurrentUser={setCurrentUser} />
+            )}
+          />
+          <Route exact path="/signup" render={props =>(
+             <NewAccount {...props} />
+            )}
+          />
+          <Route exact path="/recipes/:id" render={props =>(
+             <RecipeDetail {...props} />
+            )}
+          />
+          <PrivateRoute exact path="/profile" component={Test} />
         </Switch>
       <Footer />
 
