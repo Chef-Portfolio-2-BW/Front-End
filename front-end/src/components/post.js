@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { axiosWithAuth } from "./axiosAuth";
 
 import "./post.css";
 
@@ -7,10 +7,10 @@ class Post extends React.Component {
   state = {
     recipe: {
       name: "",
-      catagory: "",
+      category: "1",
       img: "",
       ingredients: "",
-      directions: ""
+      instructions: ""
     },
     isFetching: false
   };
@@ -27,10 +27,19 @@ class Post extends React.Component {
   post = e => {
     e.preventDefault();
     this.setState({
+      value: e.target.value,
       isFetching: true
     });
     //axios goes here
-    console.log(this.state);
+    console.log("first", this.state.recipe);
+    axiosWithAuth()
+      .post("https://bwchefhub.herokuapp.com/api/recipes", this.state.recipe)
+      .then(res => {
+        console.log(res.data);
+        this.setState({ recipe: [...res.data, res.data.payload] });
+        this.props.history.push("/protected");
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -46,13 +55,16 @@ class Post extends React.Component {
             onChange={this.handleChange}
           />
 
-          <input
-            type="text"
-            name="catagory"
-            placeholder="Catagory"
-            value={this.state.recipe.catagory}
-            onChange={this.handleChange}
-          />
+          <select category={this.state.category}>
+            <option category="1">Breakfast</option>
+            <option category="2">Lunch</option>
+            <option selected category="3">
+              Dinner
+            </option>
+            <option category="4">Snack</option>
+            value={this.state.recipe.category}
+            name="category" onChange={this.handleChange}
+          </select>
 
           <input
             type="text"
@@ -72,9 +84,9 @@ class Post extends React.Component {
 
           <input
             type="textarea"
-            name="directions"
-            placeholder="Directions"
-            value={this.state.recipe.directions}
+            name="instructions"
+            placeholder="Instructions"
+            value={this.state.recipe.instructions}
             onChange={this.handleChange}
           />
 
