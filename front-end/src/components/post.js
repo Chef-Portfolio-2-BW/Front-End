@@ -7,7 +7,7 @@ class Post extends React.Component {
   state = {
     recipe: {
       name: "",
-      catagory: "",
+      category: "",
       img: "",
       ingredients: "",
       instructions: ""
@@ -27,12 +27,13 @@ class Post extends React.Component {
   post = e => {
     e.preventDefault();
     this.setState({
+      value: e.target.value,
       isFetching: true
     });
     //axios goes here
-    console.log(this.state);
-    axiosWithAuth
-      .post("https://bwchefhub.herokuapp.com/api/recipies", this.state)
+    console.log("first", this.state.recipe);
+    axiosWithAuth()
+      .post("https://bwchefhub.herokuapp.com/api/recipes", this.state.recipe)
       .then(res => {
         console.log(res.data);
         this.setState({ recipe: [...res.data, res.data.payload] });
@@ -54,13 +55,15 @@ class Post extends React.Component {
             onChange={this.handleChange}
           />
 
-          <input
-            type="text"
-            name="catagory"
-            placeholder="Catagory"
-            value={this.state.recipe.catagory}
-            onChange={this.handleChange}
-          />
+          <select value={this.state.value}>
+            <option category="1">Breakfast</option>
+            <option category="2">Lunch</option>
+            <option selected category="3">
+              Dinner
+            </option>
+            <option category="4">Snack</option>
+            name="category" onChange={this.handleChange}
+          </select>
 
           <input
             type="text"
