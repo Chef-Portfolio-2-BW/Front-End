@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from './axiosAuth.js';
 import {Container, Row, Col, CardDeck} from 'reactstrap';
 
@@ -7,16 +7,16 @@ import RecipeCardPro from './recipeCardPro.js';
 const Test = (props) =>{
   const [recipeList, setRecipeList] = useState([]);
 
-  const getRecipes = () =>{
+  useEffect(()=>{
     axiosWithAuth()
-      .get('https://bwchefhub.herokuapp.com/api/recipes/myrecipes')
+      .get('https://bwchefhub.herokuapp.com/api/recipes')
       .then(res => {
         console.log('recipes data: ', res)
         setRecipeList(res.data);
       })
       .catch(err => console.log('Error: ', err))
+    }, [])
 
-  }
 
 
 
@@ -26,9 +26,7 @@ const Test = (props) =>{
           <Row>
             <Col><h2>Your Recipes</h2></Col>
           </Row>
-          <section>
-            <button onClick={()=> getRecipes()}> Get Recipes </button>
-          </section>
+        
           <CardDeck className='fix'>
             {recipeList.map(recipe =>(
 

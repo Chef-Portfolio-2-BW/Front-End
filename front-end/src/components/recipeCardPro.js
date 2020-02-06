@@ -19,12 +19,13 @@ const RecipeCardPro = (props) =>{
   }
 
   const deleteMe = () =>{
-    console.log(`Im deleted`);
+    console.log(`Im deleted`, props.id);
     axiosWithAuth()
       .delete(`https://bwchefhub.herokuapp.com/api/recipes/${props.id}`)
         .then(res => {
           console.log('The Recipe is gone!');
           cancel();
+          window.location.reload(false);
         })
         .catch(err=>console.log('DELETE ERROR: ', err));
   }
