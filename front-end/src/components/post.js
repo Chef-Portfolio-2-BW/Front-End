@@ -7,7 +7,7 @@ class Post extends React.Component {
   state = {
     recipe: {
       name: "",
-      category: "",
+      category: "1",
       img: "",
       ingredients: "",
       instructions: ""
@@ -55,13 +55,14 @@ class Post extends React.Component {
             onChange={this.handleChange}
           />
 
-          <select value={this.state.value}>
+          <select category={this.state.category}>
             <option category="1">Breakfast</option>
             <option category="2">Lunch</option>
             <option selected category="3">
               Dinner
             </option>
             <option category="4">Snack</option>
+            value={this.state.recipe.category}
             name="category" onChange={this.handleChange}
           </select>
 
