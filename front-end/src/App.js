@@ -15,7 +15,8 @@ import LoginForm from "./components/LoginForm";
 import Test from "./components/test.js";
 import RecipeListMain from "./components/recipeListMain.js";
 
-import FormikLoginForm from "./components/LoginForm.js";
+
+import RecipeCardPro from './components/recipeCardPro.js';
 
 import RecipeDetail from "./components/RecipeDetail.js";
 
@@ -49,19 +50,49 @@ const App = props => {
 
   console.log("currentUser: ", currentUser);
 
-  return (
+
+
+  return(
     <div className="App">
-      <Head />
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/Login" component={LoginForm} />
-        <Route exact path="/signup" component={NewAccount} />
-      </Switch>
-      <Footer />
-      <Post />
+      <div className='page-container'>
+        <div className="content-wrap">
+
+          <Head />
+          <Nav currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          <Switch>
+            <Route exact path='/' render={props=>(
+                <HomePage {...props} />
+              )}
+            />
+            <Route exact path='/Login' render={props =>(
+               <LoginForm {...props} setCurrentUser={setCurrentUser} />
+              )}
+            />
+            <Route exact path="/signup" render={props =>(
+               <NewAccount {...props} />
+              )}
+            />
+            <Route exact path="/recipes/:id" render={props =>(
+               <RecipeDetail {...props} />
+              )}
+            />
+            <PrivateRoute exact path="/profile" component={Test} />
+          </Switch>
+          <Route exact path='/test' render={props =>(
+             <RecipeCardPro {...props} />
+            )}
+          />
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
+
     </div>
-  );
-};
+  </div>
+);
+
+}
+
+
 
 export default App;
