@@ -10,7 +10,7 @@ import HomePage from './components/homePage.js';
 import Head from './components/Head';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-
+import Profile from './components/Profile';
 import LoginForm from './components/LoginForm';
 
 import Test from './components/test.js';
@@ -55,6 +55,7 @@ const App = props => {
           <Route exact path='/' component={HomePage} />
           <Route exact path='/Login' component={LoginForm} />
           <Route exact path="/signup" component={NewAccount} />
+          <Route exact path='/profile' render={ () => ( <Profile {...props} currentUser={currentUser} /> )} />>
         </Switch>
       <Footer />
 

@@ -16,6 +16,7 @@ export default function Nav () {
             <Link className='nav-link' to={'/'}>Home</Link>
             <Link className='nav-link' to={'/login'}>Login </Link>
             <Link className='nav-link' to={'/signup'}>Sign Up</Link>
+            <Link className='nav-link' to={'/profile'}>Profile</Link>
         </LinkContainer>
     )
 }

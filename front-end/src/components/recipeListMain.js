@@ -16,7 +16,7 @@ const RecipeListMain = (props) =>{
     }, []);
 
     return(
-      <div>
+      <div className="recipe-list-container">
         <Container className="recipe-list-main">
           <Row>
             <Col><h2>Current Hot Recipes</h2></Col>

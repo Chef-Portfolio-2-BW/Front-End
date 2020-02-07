@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Card, Button, CardImg, CardTitle, CardText, CardDeck,
   CardSubtitle, CardBody } from 'reactstrap';
+
+
 
 const RecipeCardMain = (props) =>{
 
@@ -19,9 +22,6 @@ const RecipeCardMain = (props) =>{
       </CardBody>
     </Card>
 )
-
-
-
 }
 
 export default RecipeCardMain;
