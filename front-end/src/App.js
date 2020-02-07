@@ -3,17 +3,16 @@ import { Route, Switch } from "react-router-dom";
 
 import PrivateRoute from "./components/privateRoute.js";
 
-import NewAccount from "./components/newAccount.js";
-import "./App.css";
-import HomePage from "./components/homePage.js";
-import Head from "./components/Head";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
 
-import LoginForm from "./components/LoginForm";
+import NewAccount from './components/newAccount.js';
+import './App.css';
+import HomePage from './components/homePage.js';
+import Head from './components/Head';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import Profile from './components/Profile';
+import LoginForm from './components/LoginForm';
 
-import Test from "./components/test.js";
-import RecipeListMain from "./components/recipeListMain.js";
 
 
 import RecipeCardPro from './components/recipeCardPro.js';
@@ -90,6 +89,7 @@ const App = props => {
     </div>
   </div>
 );
+
 
 }
 

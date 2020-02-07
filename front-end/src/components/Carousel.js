@@ -9,9 +9,6 @@ const CarouselContainer = styled.div`
     align-items: center;
     justify-content: space-evenly;
     width: 60%;
-    @media (max-width: 800px){
-      width: 45%;
-    }
 `
 
 export default () => (

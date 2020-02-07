@@ -45,7 +45,7 @@ const LoginForm = (props) => {
       axiosWithAuth()
         .post("https://bwchefhub.herokuapp.com/api/auth/login", values)
         .then(res => {
-            console.log(res);
+            console.log(res.data);
 
             localStorage.setItem('token', res.data.token);
             props.setCurrentUser({username:values.username, loggedIn:true})
