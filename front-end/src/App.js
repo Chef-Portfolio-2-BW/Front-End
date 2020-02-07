@@ -12,6 +12,7 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Profile from './components/Profile';
 import LoginForm from './components/LoginForm';
+import Test from './components/test';
 
 
 
@@ -24,7 +25,7 @@ import decode from "jwt-decode";
 // const username = jwt.decode(token, secret.jwtSecret)['username']
 
 //import RecipeListMain from "./components/recipeListMain.js";
-import Post from "./components/Post";
+import Post from "./components/post";
 
 const App = props => {
   const [currentUser, setCurrentUser] = useState({
@@ -75,7 +76,10 @@ const App = props => {
                <RecipeDetail {...props} />
               )}
             />
-            <PrivateRoute exact path="/profile" component={Test} />
+            <Route exact path="/profile" render={props => (
+            <Profile {...props} currentUser={currentUser} />
+            )}
+            />
           </Switch>
           <Route exact path='/test' render={props =>(
              <RecipeCardPro {...props} />
