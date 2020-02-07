@@ -42,12 +42,9 @@ code {
 }
 
 .main.account{
-  height: 650px;
+  height: 550px;
 }
-.main form{
-  border-radius: 10px;
-  margin-top: 0;
-}
+
 .main h1{
   color:white;
 }
@@ -69,7 +66,7 @@ code {
   border: 3px solid #fd9827;
   border-radius: 10px;
   color: black;
-  font-size: 1rem;
+  font-size: 1.03rem;
   padding: 4px;
   margin-left: 15px;
 }
@@ -140,7 +137,7 @@ code {
   background-color: white;
 }
 
-.delete-me:hover, .main button.delete-me:hover{
+.delete-me:hover{
 
   box-shadow: 0 0 10px maroon;
   color: black;
@@ -264,7 +261,6 @@ code {
   to {opacity: 1}
 }
 
-
 .profile-container{
   margin: 3%;
   background-color: black;
@@ -280,29 +276,5 @@ code {
 }
 .profile-content h1 {
     font-size: 3rem;
-}
-.indicator.online {
-  background: #28B62C;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  -webkit-animation: pulse-animation 2s infinite linear;
-}
-
-@-webkit-keyframes pulse-animation {
-0% { -webkit-transform: scale(1); }
-25% { -webkit-transform: scale(1); }
-  50% { -webkit-transform: scale(1.2) }
-  75% { -webkit-transform: scale(1); }
-  100% { -webkit-transform: scale(1); }
-}
-
-.indicator.offline {
-  background: #FF4136;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  
 }
 
