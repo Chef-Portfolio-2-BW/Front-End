@@ -5,11 +5,12 @@ import RecipeCardMain from './recipeCardMain.js';
 
 const RecipeListMain = (props) =>{
   const [recipeList, setRecipeList] = useState([]);
+  // console.log("recipe props: ", props)
   useEffect(() =>{
     axiosWithAuth()
       .get('https://bwchefhub.herokuapp.com/api/recipes')
       .then(res => {
-        console.log('recipes data: ', res)
+        // console.log('recipes data: ', res)
         setRecipeList(res.data);
       })
       .catch(err => console.log('Error: ', err))

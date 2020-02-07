@@ -11,10 +11,10 @@ const Copyright = styled.p`
 const FooterContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     align-items: center;
     background: black;
-    margin-top: 1%;
+    margin-top: 30px;
 `
 
 export default function Footer () {

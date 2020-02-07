@@ -8,6 +8,11 @@ import { Card, Button, CardImg, CardTitle, CardText, CardDeck,
 
 const RecipeCardMain = (props) =>{
 
+  // console.log("card props: ", props)
+  let click= () =>{
+    props.history.push(`/recipes/${props.id}`);
+  }
+
   return(
     <Card className="recipe-card-main">
       <div className='card-img-container'>
@@ -17,7 +22,7 @@ const RecipeCardMain = (props) =>{
         <div className='card-container'>
         <CardTitle>{props.name}</CardTitle>
         <CardSubtitle>By: {props.username}</CardSubtitle>
-        <Button>See It!</Button>
+        <Button onClick={()=>click()}>See It!</Button>
         </div>
       </CardBody>
     </Card>
