@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from './axiosAuth.js';
 import RecipeCardPro from './recipeCardPro';
 import { CardDeck } from 'reactstrap';
+import { Link } from 'react-router-dom';
+
+
 
 
 const Profile = (props) => {
@@ -40,6 +43,11 @@ const Profile = (props) => {
                             />
                              ))}
                         </CardDeck>
+                            <Link to='/create'>
+                            <button>
+                                Create Post!
+                            </button>
+                            </Link>
                         </div>
                     </div>
                 </section>
