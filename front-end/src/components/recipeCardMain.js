@@ -10,7 +10,7 @@ const RecipeCardMain = (props) =>{
 
   // console.log("card props: ", props)
   let click= () =>{
-    props.setSelection(props.username);
+    props.setSelection({name:props.username, id:''});
     props.history.push(`/recipes/${props.id}`);
   }
 

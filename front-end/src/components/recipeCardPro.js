@@ -15,7 +15,13 @@ const RecipeCardPro = (props) =>{
 
 
   const click = () =>{
+    props.setSelection(props.currentUser.name)
     props.history.push(`/recipes/${props.id}`);
+  }
+
+  const edit = () =>{
+    props.setSelection({name:props.name, id:props.mealId});
+    props.history.push(`/edit/${props.id}`);
   }
 
   const deleteMe = () =>{
@@ -50,7 +56,7 @@ const RecipeCardPro = (props) =>{
           <CardTitle>{props.name}</CardTitle>
           <CardSubtitle>By: {props.username}</CardSubtitle>
           <Button onClick={()=>click()}>View Details</Button>
-          <Button onClick={()=>click()}>Edit</Button>
+          <Button onClick={()=>edit()}>Edit</Button>
           <Button className='delete-me' onClick={toggle}>Delete</Button>
 
           <div id='confirm-box' className={`modal ${modal ? 'on' :""}`}>

@@ -14,7 +14,7 @@ const Nav = (props) => {
 
   const logout= () =>{
     localStorage.removeItem('token');
-    props.setCurrentUser({username:'', loggedIn:false, id:''});
+    props.setCurrentUser({name:'', loggedIn:false, id:''});
     // props.history.push('/');
 
   };
