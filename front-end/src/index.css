@@ -44,7 +44,10 @@ code {
 .main.account{
   height: 550px;
 }
-
+.main form{
+  border-radius: 10px;
+  margin-top: 0;
+}
 .main h1{
   color:white;
 }
@@ -66,7 +69,7 @@ code {
   border: 3px solid #fd9827;
   border-radius: 10px;
   color: black;
-  font-size: 1.03rem;
+  font-size: 1rem;
   padding: 4px;
   margin-left: 15px;
 }
@@ -130,7 +133,7 @@ code {
   background-color: white;
 }
 
-.delete-me:hover{
+.delete-me:hover, .main button.delete-me:hover{
 
   box-shadow: 0 0 10px maroon;
   color: black;

@@ -25,7 +25,11 @@ const RecipeCardPro = (props) =>{
         .then(res => {
           console.log('The Recipe is gone!');
           cancel();
-          window.location.reload(false);
+          axiosWithAuth()
+            .get('https://bwchefhub.herokuapp.com/api/recipes/myrecipes')
+            .then(res=>props.setRecipeList(res.data))
+            .catch(err=>console.log("Update error:", err))
+          // window.location.reload(false);
         })
         .catch(err=>console.log('DELETE ERROR: ', err));
   }
