@@ -3,25 +3,23 @@ import { Route, Switch } from "react-router-dom";
 
 import PrivateRoute from "./components/privateRoute.js";
 
+import NewAccount from "./components/newAccount.js";
+import "./App.css";
+import HomePage from "./components/homePage.js";
+import Head from "./components/Head";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Profile from "./components/Profile";
+import LoginForm from "./components/LoginForm";
 
-import NewAccount from './components/newAccount.js';
-import './App.css';
-import HomePage from './components/homePage.js';
-import Head from './components/Head';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import Profile from './components/Profile';
-import LoginForm from './components/LoginForm';
-
-
-
-import RecipeCardPro from './components/recipeCardPro.js';
+import RecipeCardPro from "./components/recipeCardPro.js";
 
 import RecipeDetail from "./components/RecipeDetail.js";
 
 import decode from "jwt-decode";
 
 import Post from "./components/post.js";
+import Test from "./components/test.js";
 
 const App = props => {
   const [currentUser, setCurrentUser] = useState({
@@ -31,7 +29,6 @@ const App = props => {
   });
 
   const [selection, setSelection] = useState();
-
 
   useEffect(() => {
     if (localStorage.getItem("token") !== null) {
@@ -49,51 +46,54 @@ const App = props => {
 
   console.log("currentUser: ", currentUser);
 
-
-
-  return(
+  return (
     <div className="App">
-      <div className='page-container'>
+      <div className="page-container">
         <div className="content-wrap">
-
           <Head />
           <Nav currentUser={currentUser} setCurrentUser={setCurrentUser} />
           <Switch>
-            <Route exact path='/' render={props=>(
+            <Route
+              exact
+              path="/"
+              render={props => (
                 <HomePage {...props} setSelection={setSelection} />
               )}
             />
-            <Route exact path='/Login' render={props =>(
-               <LoginForm {...props} setCurrentUser={setCurrentUser} />
+            <Route
+              exact
+              path="/Login"
+              render={props => (
+                <LoginForm {...props} setCurrentUser={setCurrentUser} />
               )}
             />
-            <Route exact path="/signup" render={props =>(
-               <NewAccount {...props} />
-              )}
+            <Route
+              exact
+              path="/signup"
+              render={props => <NewAccount {...props} />}
             />
-            <Route exact path="/recipes/:id" render={props =>(
-               <RecipeDetail {...props} selection={selection} />
+            <Route
+              exact
+              path="/recipes/:id"
+              render={props => (
+                <RecipeDetail {...props} selection={selection} />
               )}
             />
             <PrivateRoute exact path="/profile" component={Test} />
             <PrivateRoute exact path="/create" component={Post} />
           </Switch>
-          <Route exact path='/test' render={props =>(
-             <RecipeCardPro {...props} />
-            )}
+          <Route
+            exact
+            path="/test"
+            render={props => <RecipeCardPro {...props} />}
           />
         </div>
         <div className="footer">
           <Footer />
         </div>
-
+      </div>
     </div>
-  </div>
-);
-
-
-}
-
-
+  );
+};
 
 export default App;
