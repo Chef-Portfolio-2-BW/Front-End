@@ -15,7 +15,7 @@ const RecipeCardPro = (props) =>{
 
 
   const click = () =>{
-    props.setSelection(props.currentUser.name)
+    props.setSelection({name:props.currentUser.name, id: ''});
     props.history.push(`/recipes/${props.id}`);
   }
 

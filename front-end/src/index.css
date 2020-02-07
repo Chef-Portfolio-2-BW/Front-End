@@ -44,6 +44,9 @@ code {
 .main.account{
   height: 650px;
 }
+.main.account2{
+  height: 850px;
+}
 .main form{
   border-radius: 10px;
   margin-top: 0;
@@ -303,6 +306,5 @@ code {
   display: inline-block;
   width: 1em;
   height: 1em;
-  
-}
 
+}
