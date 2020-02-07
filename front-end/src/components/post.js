@@ -55,15 +55,17 @@ class Post extends React.Component {
             onChange={this.handleChange}
           />
 
-          <select category={this.state.category}>
-            <option category="1">Breakfast</option>
-            <option category="2">Lunch</option>
-            <option selected category="3">
+          <select
+            name="category"
+            onChange={this.handleChange}
+            value={this.state.recipe.category}
+          >
+            <option value="1">Breakfast</option>
+            <option value="2">Lunch</option>
+            <option selected value="3">
               Dinner
             </option>
-            <option category="4">Snack</option>
-            value={this.state.recipe.category}
-            name="category" onChange={this.handleChange}
+            <option value="4">Snack</option>
           </select>
 
           <input
@@ -75,7 +77,10 @@ class Post extends React.Component {
           />
 
           <input
+            className="area"
             type="textarea"
+            cols={40}
+            rows={10}
             name="ingredients"
             placeholder="Ingredients"
             value={this.state.recipe.ingredients}
@@ -83,6 +88,7 @@ class Post extends React.Component {
           />
 
           <input
+            className="area"
             type="textarea"
             name="instructions"
             placeholder="Instructions"
@@ -90,7 +96,7 @@ class Post extends React.Component {
             onChange={this.handleChange}
           />
 
-          <button> Post </button>
+          <button className="postButton"> Post </button>
         </form>
       </div>
     );
