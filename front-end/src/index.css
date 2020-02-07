@@ -42,7 +42,14 @@ code {
 }
 
 .main.account{
-  height: 550px;
+  height: 650px;
+}
+.main.account2{
+  height: 850px;
+}
+.main form{
+  border-radius: 10px;
+  margin-top: 0;
 }
 
 .main h1{
@@ -278,3 +285,27 @@ code {
     font-size: 3rem;
 }
 
+.indicator.online {
+  background: #28B62C;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  -webkit-animation: pulse-animation 2s infinite linear;
+}
+
+@-webkit-keyframes pulse-animation {
+0% { -webkit-transform: scale(1); }
+25% { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(1.2) }
+  75% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(1); }
+}
+
+.indicator.offline {
+  background: #FF4136;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+
+}

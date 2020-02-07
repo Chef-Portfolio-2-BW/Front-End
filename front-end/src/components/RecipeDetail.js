@@ -8,8 +8,8 @@ const DetailDiv = styled.div`
     margin-top: 0.5%;
     margin-left: 2%;
     margin-right: 2%;
-    margin-bottom: 0.5%;
-    padding: 0.5%;
+    margin-bottom: 50px;
+    padding: 0.75%;
     width: 90%;
     background-color: black;
     color: white;
