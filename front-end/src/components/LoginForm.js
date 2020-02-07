@@ -48,7 +48,7 @@ const LoginForm = (props) => {
             console.log(res.data);
 
             localStorage.setItem('token', res.data.token);
-            props.setCurrentUser({username:values.username, loggedIn:true})
+            props.setCurrentUser({name:values.username, loggedIn:true})
             props.history.push('/profile');
 
         })

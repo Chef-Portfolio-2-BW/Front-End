@@ -25,7 +25,7 @@ const RecipeListMain = (props) =>{
           <CardDeck className='fix'>
             {recipeList.map(recipe =>(
 
-                <RecipeCardMain {...props} key={recipe.id} id={recipe.id} name={recipe.name} img={recipe.img} username={recipe.username} />
+                <RecipeCardMain {...props} key={recipe.id} id={recipe.id} name={recipe.name} img={recipe.img} username={recipe.username} setSelection={props.setSelection} />
 
             ))}
           </CardDeck>
