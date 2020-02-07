@@ -32,7 +32,7 @@ const Paragraph = styled.p`
     font-style: italic;
 `
 
-export default function HomePage () {
+const HomePage = (props) => {
     return (
         <MainSectionContainer>
             <MainSectionContent>
@@ -44,10 +44,12 @@ export default function HomePage () {
                 Bringing amateur and professional chefs together, in one kitchen.
                 </Paragraph>
             </MainSectionContent>
-            <RecipeListMain />
+            <RecipeListMain {...props} />
         </MainSectionContainer>
     )
 }
+
+export default HomePage;
 
 
 
@@ -62,5 +64,3 @@ export default function HomePage () {
 //         </Body>
 //     )
 // }
-
-

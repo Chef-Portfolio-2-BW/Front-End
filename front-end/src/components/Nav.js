@@ -10,12 +10,24 @@ const LinkContainer= styled.div`
     margin-bottom: 1%;
 `
 
-export default function Nav () {
+const Nav = (props) => {
+
+  const logout= () =>{
+    localStorage.removeItem('token');
+    props.setCurrentUser({username:'', loggedIn:false, id:''});
+    // props.history.push('/');
+
+  };
+
     return (
         <LinkContainer>
             <Link className='nav-link' to={'/'}>Home</Link>
-            <Link className='nav-link' to={'/login'}>Login </Link>
-            <Link className='nav-link' to={'/signup'}>Sign Up</Link>
+            <Link className={`nav-link${props.currentUser.loggedIn ? ' logged-in' :""}`} to={'/login'}>Login </Link>
+            <Link className={`nav-link${props.currentUser.loggedIn ? ' logged-in' :""}`} to={'/signup'}>Sign Up</Link>
+            <Link className={`nav-link${props.currentUser.loggedIn ? "" :' logged-in'}`} to={'/profile'}>Profile</Link>
+            <Link className={`nav-link${props.currentUser.loggedIn ? "" :' logged-in'}`} onClick={()=>logout()}>Log Out</Link>
         </LinkContainer>
     )
 }
+
+export default Nav;

@@ -12,6 +12,8 @@ import thunk from 'redux-thunk';
 
 import { chefHubReducer } from './reducer/index.js';
 
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 let store = createStore(chefHubReducer, applyMiddleware(thunk));
 
 ReactDOM.render(

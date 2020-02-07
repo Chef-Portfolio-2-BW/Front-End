@@ -17,10 +17,11 @@
 }
 
 input {
-  padding: 12px;
-  margin: 15px 0;
-  font-size: 1.6rem;
+  padding: 8px;
+  margin: 10px 0;
+  font-size: 1rem;
 }
+
 
 .postButton {
   width: 150px;
@@ -42,3 +43,4 @@ select {
   padding: 5px 92px;
   font-size: 2rem;
 }
+

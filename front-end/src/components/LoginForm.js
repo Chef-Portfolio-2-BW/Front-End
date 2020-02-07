@@ -7,9 +7,9 @@ import { axiosWithAuth } from './axiosAuth.js';
 
 
 const LoginFormWrapper = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: flex-end; */
+    /* align-items: center; */
     padding: 1.5rem;
     background-color: black;
 `
@@ -45,9 +45,10 @@ const LoginForm = (props) => {
       axiosWithAuth()
         .post("https://bwchefhub.herokuapp.com/api/auth/login", values)
         .then(res => {
-            console.log(res);
+            console.log(res.data);
 
             localStorage.setItem('token', res.data.token);
+            props.setCurrentUser({username:values.username, loggedIn:true})
             props.history.push('/profile');
 
         })
@@ -59,8 +60,10 @@ const LoginForm = (props) => {
 
 
     return (
+      <div className='main'>
         <Form onSubmit={handleSubmit}>
             <LoginFormWrapper>
+              <h2>Login</h2>
                 <UsernameField>
                     {touched.username && errors.username && <p>{errors.username}</p>}
                     <Field type="text" name="username" placeholder="Username" />
@@ -69,9 +72,11 @@ const LoginForm = (props) => {
                     {touched.password && errors.password && <p>{errors.password}</p>}
                     <Field type="password" name="password" placeholder="Password" />
                 </PasswordField>
+                <br />
                 <SubmitButton disabled={isSubmitting}>Submit</SubmitButton>
             </LoginFormWrapper>
         </Form>
+      </div>
     );
 }
 
