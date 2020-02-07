@@ -12,16 +12,10 @@ import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import LoginForm from "./components/LoginForm";
 
+import Test from './components/test';
 
-import NewAccount from './components/newAccount.js';
-import './App.css';
-import HomePage from './components/homePage.js';
-import Head from './components/Head';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import Profile from './components/Profile';
-import LoginForm from './components/LoginForm';
 import UpdateRecipe from './components/updateRecipe.js';
+
 
 
 
@@ -31,9 +25,11 @@ import RecipeDetail from "./components/RecipeDetail.js";
 
 import decode from "jwt-decode";
 
-import Post from "./components/post.js";
 
-import Test from './components/test.js';
+//import RecipeListMain from "./components/recipeListMain.js";
+import Post from "./components/post";
+
+
 
 
 const App = props => {
@@ -98,9 +94,10 @@ const App = props => {
                 <RecipeDetail {...props} selection={selection} />
               )}
             />
-            <PrivateRoute exact path="/profile" component={Test} setSelection={setSelection} currentUser={currentUser} />
+
+            <PrivateRoute exact path="/profile" component={Profile} setSelection={setSelection} currentUser={currentUser} />
             <PrivateRoute exact path="/create" component={Post} />
-            <PrivateRoute excat path="/edit/:id" component={UpdateRecipe} name={selection.name} id={selection.id} />
+            <PrivateRoute exact path="/edit/:id" component={UpdateRecipe} name={selection.name} id={selection.id} />
           </Switch>
           
         </div>

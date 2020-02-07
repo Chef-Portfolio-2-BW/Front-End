@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from './axiosAuth.js';
-import { Jumbotron } from 'reactstrap';
+import RecipeCardPro from './recipeCardPro';
+import { CardDeck } from 'reactstrap';
 
 
 const Profile = (props) => {
@@ -20,12 +21,47 @@ const Profile = (props) => {
             getRecipes();
         }, []);
 
-        return (
-            <div>
-                <h1>{props.currentUser.name}</h1>
 
+        return (
+            <div className='profile-container'>
+                <section className='profile-section'>
+                    <div className='profile-content'>
+                        <h1>{props.currentUser.name}'s Recipes</h1>
+                        <div>
+                        <CardDeck className='fix'>
+                        {profileData.map(recipe =>(
+                            <RecipeCardPro
+                            {...props}
+                            key={recipe.id}
+                            id={recipe.id}
+                            name={recipe.name}
+                            img={recipe.img}
+                            username={recipe.username}
+                            />
+                             ))}
+                        </CardDeck>
+                        </div>
+                    </div>
+                </section>
             </div>
         )
+        // return(
+        //     <div>
+        //       <Container className="recipe-list-main main account">
+        //         <Row>
+        //           <Col><h2>Your Recipes</h2></Col>
+        //         </Row>
+
+        //         <CardDeck className='fix'>
+        //           {recipeList.map(recipe =>(
+
+        //               <RecipeCardPro {...props} key={recipe.id} id={recipe.id} name={recipe.name} img={recipe.img} username={recipe.username} />
+
+        //           ))}
+        //         </CardDeck>
+        //       </Container>
+        //     </div>
+        //   )
 
 }
 export default Profile;

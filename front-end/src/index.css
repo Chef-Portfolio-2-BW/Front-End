@@ -263,3 +263,46 @@ code {
   from {opacity: 0}
   to {opacity: 1}
 }
+
+
+.profile-container{
+  margin: 3%;
+  background-color: black;
+  border: 2px solid #fd9827;
+  border-radius: 10px;
+  color: white;
+}
+.profile-content{
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-content h1 {
+    font-size: 3rem;
+}
+.indicator.online {
+  background: #28B62C;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  -webkit-animation: pulse-animation 2s infinite linear;
+}
+
+@-webkit-keyframes pulse-animation {
+0% { -webkit-transform: scale(1); }
+25% { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(1.2) }
+  75% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(1); }
+}
+
+.indicator.offline {
+  background: #FF4136;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  
+}
+
