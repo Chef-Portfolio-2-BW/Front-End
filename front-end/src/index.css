@@ -42,7 +42,7 @@ code {
 }
 
 .main.account{
-  height: 550px;
+  height: 650px;
 }
 .main form{
   border-radius: 10px;
@@ -263,4 +263,3 @@ code {
   from {opacity: 0}
   to {opacity: 1}
 }
-

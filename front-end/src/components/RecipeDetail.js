@@ -38,6 +38,7 @@ const RecipeDetail = (props) => {
         .get(`https://bwchefhub.herokuapp.com/api/recipes/${props.match.params.id}`)
         .then(res => {
           setItem({img:res.data.img});
+          console.log('recipe data:', res.data);
           axiosWithAuth()
             .get(`https://bwchefhub.herokuapp.com/api/recipes/${props.match.params.id}/instructions`)
             .then(res=>{
@@ -66,7 +67,7 @@ const RecipeDetail = (props) => {
           <DetailDiv>
               <img src={item.img} alt={item.img} />
               <h1>{item.name}</h1>
-              <p>By: {props.selection}</p>
+              <p>By: {props.selection.name}</p>
               <p>Category: {item.category}</p>
 
               <p>Ingredients:

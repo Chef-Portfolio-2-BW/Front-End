@@ -33,7 +33,8 @@ const Test = (props) =>{
           <CardDeck className='fix'>
             {recipeList.map(recipe =>(
 
-                <RecipeCardPro {...props} key={recipe.id} id={recipe.id} name={recipe.name} img={recipe.img} username={recipe.username} setRecipeList={setRecipeList} />
+                <RecipeCardPro {...props} key={recipe.id} id={recipe.id} mealId={recipe.mealID} name={recipe.name} img={recipe.img} username={recipe.username}
+                setRecipeList={setRecipeList} setSelection={props.setSelection} currentUser={props.currentUser}/>
 
             ))}
           </CardDeck>
