@@ -54,9 +54,9 @@ const UpdateForm = (props) => {
   };
 
   return (
-    <div className="main account">
+    <div className="main account2">
       <section>
-        <h1>Create a New Account</h1>
+        <h1>Update Recipe</h1>
         <div className="form-container">
 
           <Form onSubmit={handleSubmit}>
