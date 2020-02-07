@@ -20,11 +20,8 @@ import RecipeCardPro from './components/recipeCardPro.js';
 import RecipeDetail from "./components/RecipeDetail.js";
 
 import decode from "jwt-decode";
-// const token = req.headers.authorization
-// const username = jwt.decode(token, secret.jwtSecret)['username']
 
-//import RecipeListMain from "./components/recipeListMain.js";
-import Post from "./components/Post";
+import Post from "./components/post.js";
 
 const App = props => {
   const [currentUser, setCurrentUser] = useState({
@@ -32,6 +29,9 @@ const App = props => {
     loggedIn: false,
     id: ""
   });
+
+  const [selection, setSelection] = useState();
+
 
   useEffect(() => {
     if (localStorage.getItem("token") !== null) {
@@ -60,7 +60,7 @@ const App = props => {
           <Nav currentUser={currentUser} setCurrentUser={setCurrentUser} />
           <Switch>
             <Route exact path='/' render={props=>(
-                <HomePage {...props} />
+                <HomePage {...props} setSelection={setSelection} />
               )}
             />
             <Route exact path='/Login' render={props =>(
@@ -72,10 +72,11 @@ const App = props => {
               )}
             />
             <Route exact path="/recipes/:id" render={props =>(
-               <RecipeDetail {...props} />
+               <RecipeDetail {...props} selection={selection} />
               )}
             />
             <PrivateRoute exact path="/profile" component={Test} />
+            <PrivateRoute exact path="/create" component={Post} />
           </Switch>
           <Route exact path='/test' render={props =>(
              <RecipeCardPro {...props} />

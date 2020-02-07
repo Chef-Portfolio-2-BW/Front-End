@@ -36,8 +36,8 @@ class Post extends React.Component {
       .post("https://bwchefhub.herokuapp.com/api/recipes", this.state.recipe)
       .then(res => {
         console.log(res.data);
-        this.setState({ recipe: [...res.data, res.data.payload] });
-        this.props.history.push("/protected");
+        // this.setState({ recipe: [...res.data, res.data.payload] });
+        this.props.history.push("/profile");
       })
       .catch(err => console.log(err));
   };
