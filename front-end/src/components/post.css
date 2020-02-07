@@ -22,7 +22,7 @@ input {
   font-size: 1.6rem;
 }
 
-button {
+.postButton {
   width: 150px;
   background-color: black;
   border: 3px solid #fd9827;

@@ -96,7 +96,7 @@ class Post extends React.Component {
             onChange={this.handleChange}
           />
 
-          <button> Post </button>
+          <button className="postButton"> Post </button>
         </form>
       </div>
     );
