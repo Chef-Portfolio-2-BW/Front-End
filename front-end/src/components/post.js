@@ -44,7 +44,7 @@ class Post extends React.Component {
 
   render() {
     return (
-      <div className="postWrap">
+      <div className="main account2">
         <h1>Enter all the details for your recipe</h1>
         <form className="formStyle" onSubmit={this.post}>
           <input
