@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-
+// import {Link} from 'react-router-dom';
 import SocialLinks from './SocialLinks';
 
 const Copyright = styled.p`
@@ -17,13 +17,16 @@ const FooterContainer = styled.div`
     margin-top: 30px;
 `
 
-export default function Footer () {
+const Footer = (props) => {
     return (
         <FooterContainer>
         <SocialLinks/>
+        <a href='https://elastic-curie-dc6000.netlify.com/index.html#'><button className="add-button" >Marketing</button></a>
         <Copyright>
             Copyright ChefHub 2020, All Rights Reserved.
             </Copyright>
         </FooterContainer>
     )
 }
+
+export default Footer;
