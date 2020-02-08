@@ -153,6 +153,7 @@ code {
   padding: 10%;
   outline: none;
   white-space: nowrap;
+  font-size: 1rem;
 }
 
 .btn2:hover{
