@@ -44,7 +44,7 @@ const UpdateForm = (props) => {
     event.preventDefault();
     let update = { name: values.name, img: values.img, ingredients: values.ingredients, instructions: values.instructions, category: parseInt(values.category)}
     axiosWithAuth()
-      .put(`https://bwchefhub.herokuapp.com/api/recipes/${props.id}`, update)
+      .put(`https://bwchefhub.herokuapp.com/api/recipes/${props.match.params.id}`, update)
         // https://bwchefhub.herokuapp.com/api/recipes/:id
       .then(res => {
         console.log(res)

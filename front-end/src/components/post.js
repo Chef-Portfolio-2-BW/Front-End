@@ -42,6 +42,7 @@ class Post extends React.Component {
       .catch(err => console.log(err));
   };
 
+
   render() {
     return (
       <div className="main account2">
@@ -96,7 +97,9 @@ class Post extends React.Component {
             onChange={this.handleChange}
           />
 
-          <button className="postButton"> Post </button>
+          <button> Post </button>
+          <br />
+          <div className="add-button" onClick={()=>this.props.history.goBack()}> Cancel </div>
         </form>
       </div>
     );
