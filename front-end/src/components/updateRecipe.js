@@ -36,6 +36,9 @@ const UpdateForm = (props) => {
 
   }, [])
 
+  const cancel = () =>{
+    props.history.goBack();
+  }
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -114,7 +117,9 @@ const UpdateForm = (props) => {
             <br />
             <br />
 
-            <button>Update</button>
+            <button>Update</button>{' '}
+            <button onClick={cancel}>Cancel</button>
+
             <br />
             <br />
           </Form>

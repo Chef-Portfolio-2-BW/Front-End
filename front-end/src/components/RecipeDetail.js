@@ -33,6 +33,10 @@ const RecipeDetail = (props) => {
 
     const [isLoading, setIsLoading] = useState(true);
 
+
+    const goBack = () =>{
+      props.history.goBack();
+    }
     useEffect( () => {
       axiosWithAuth()
         .get(`https://bwchefhub.herokuapp.com/api/recipes/${props.match.params.id}`)
@@ -77,6 +81,9 @@ const RecipeDetail = (props) => {
               </ul>
               </p>
               <p>Instructions: {instructions.step}</p>
+              <br />
+              <br />
+              <button className="add-button" onClick={goBack}>Go Back</button>
           </DetailDiv>
         );
       } else {
