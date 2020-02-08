@@ -56,7 +56,7 @@ code {
   color:white;
 }
 
-.main button{
+.main button, .add-button{
   width: 150px;
   background-color: black;
   border: 3px solid #fd9827;
@@ -67,7 +67,7 @@ code {
   margin-left: 15px;
 }
 
-.main button:hover{
+.main button:hover, .add-button:hover{
 
   background-color: #fd9827;
   border: 3px solid #fd9827;
