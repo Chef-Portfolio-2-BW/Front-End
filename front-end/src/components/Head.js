@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 const Head = styled.div`
@@ -16,7 +17,7 @@ export default function Header() {
     return (
         <div>
             <Head>
-                <Logo src={require('../img/chefhub.jpg')}></Logo>
+                <Link to="/"><Logo src={require('../img/chefhub.jpg')}></Logo></Link>
             </Head>
         </div>
     )

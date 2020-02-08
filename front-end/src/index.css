@@ -12,9 +12,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.page-container{
+  position: relative;
+  min-height: 100vh;
+
+}
+
+.content-wrap{
+  padding-bottom: 240px;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+
+}
 
 .main{
   width: 90%;
+  height: 380px;
   margin: 20px 5% 0 5%;
   background-color: black;
   border: 3px solid #fd9827;
@@ -23,11 +41,23 @@ code {
 
 }
 
+.main.account{
+  height: 650px;
+}
+.main.account2{
+  height: 830px;
+}
+
+.main form{
+  border-radius: 10px;
+  margin-top: 0;
+}
+
 .main h1{
   color:white;
 }
 
-.main button{
+.main button, .add-button{
   width: 150px;
   background-color: black;
   border: 3px solid #fd9827;
@@ -38,7 +68,7 @@ code {
   margin-left: 15px;
 }
 
-.main button:hover{
+.main button:hover, .add-button:hover{
 
   background-color: #fd9827;
   border: 3px solid #fd9827;
@@ -57,10 +87,17 @@ code {
 
 }
 .recipe-list-main{
-
-  width: 80%;
-  margin: 20px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 91%;
+  /* margin: 20px 10%; */
   color:white;
+  background-color: black;
+  border: 2px solid #fd9827;
+  border-radius: 10px;
+  margin: 1%;
 
 }
 
@@ -68,9 +105,8 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
-
-  margin: 20px;
+  width: 30%;
+  margin: 0.5%;
   background-color: black;
   border: 2px solid #fd9827;
   border-radius: 10px;
@@ -87,24 +123,56 @@ code {
 
 .fix{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   /* width: 90%; */
-  margin: 20px 5%;
+  margin: 4%;
 }
 .btn {
   background-color: black;
   color: white;
   border: 1px solid #fd9827;
   border-radius: 2px;
-  width: 45%;
-  margin: 1%;
+  width: 40%;
+  margin: 1.25%;
+  padding: 1%;
   outline: none;
+  white-space: nowrap;
 }
+
 .btn:hover{
   box-shadow: 0 0 10px #fd9827;
   color: black;
   background-color: white;
 }
+.btn2 {
+  background-color: black;
+  color: white;
+  border: 1px solid #fd9827;
+  border-radius: 7px;
+  margin: 2.25%;
+  padding: 10%;
+  outline: none;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.btn2:hover{
+  box-shadow: 0 0 10px #fd9827;
+  color: black;
+  background-color: white;
+}
+
+.delete-me:hover{
+
+  box-shadow: 0 0 10px maroon;
+  color: black;
+  background-color: maroon;
+  color:red;
+  border-color: red;
+
+}
+
 .card-container{
   display: flex;
   flex-direction: column;
@@ -114,5 +182,149 @@ code {
 }
 .card-img-container{
   width: 100%;
-  height: 230px;
+  height: 350px;
+}
+.recipe-list-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.logged-in{
+  display: none;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+.modal.on{
+  display: block;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: black;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+  color:white;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: maroon;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  background-color: Black;
+
+}
+
+.modal-body span{
+  color:red;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: black;
+  color: white;
+  border-bottom: 3px solid red;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+.profile-container{
+  margin: 3%;
+  background-color: black;
+  border: 2px solid #fd9827;
+  border-radius: 10px;
+  color: white;
+}
+.profile-content{
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-content h1 {
+    font-size: 3rem;
+}
+
+.indicator.online {
+  background: #28B62C;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  -webkit-animation: pulse-animation 2s infinite linear;
+}
+
+@-webkit-keyframes pulse-animation {
+0% { -webkit-transform: scale(1); }
+25% { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(1.2) }
+  75% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(1); }
+}
+
+.indicator.offline {
+  background: #FF4136;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { axiosWithAuth } from "./axiosAuth";
 
 import "./post.css";
 
@@ -7,10 +7,10 @@ class Post extends React.Component {
   state = {
     recipe: {
       name: "",
-      catagory: "",
+      category: "1",
       img: "",
       ingredients: "",
-      directions: ""
+      instructions: ""
     },
     isFetching: false
   };
@@ -27,15 +27,25 @@ class Post extends React.Component {
   post = e => {
     e.preventDefault();
     this.setState({
+      value: e.target.value,
       isFetching: true
     });
     //axios goes here
-    console.log(this.state);
+    console.log("first", this.state.recipe);
+    axiosWithAuth()
+      .post("https://bwchefhub.herokuapp.com/api/recipes", this.state.recipe)
+      .then(res => {
+        console.log(res.data);
+        // this.setState({ recipe: [...res.data, res.data.payload] });
+        this.props.history.push("/profile");
+      })
+      .catch(err => console.log(err));
   };
+
 
   render() {
     return (
-      <div className="postWrap">
+      <div className="main account2">
         <h1>Enter all the details for your recipe</h1>
         <form className="formStyle" onSubmit={this.post}>
           <input
@@ -46,13 +56,18 @@ class Post extends React.Component {
             onChange={this.handleChange}
           />
 
-          <input
-            type="text"
-            name="catagory"
-            placeholder="Catagory"
-            value={this.state.recipe.catagory}
+          <select
+            name="category"
             onChange={this.handleChange}
-          />
+            value={this.state.recipe.category}
+          >
+            <option value="1">Breakfast</option>
+            <option value="2">Lunch</option>
+            <option selected value="3">
+              Dinner
+            </option>
+            <option value="4">Snack</option>
+          </select>
 
           <input
             type="text"
@@ -63,7 +78,10 @@ class Post extends React.Component {
           />
 
           <input
+            className="area"
             type="textarea"
+            cols={40}
+            rows={10}
             name="ingredients"
             placeholder="Ingredients"
             value={this.state.recipe.ingredients}
@@ -71,14 +89,17 @@ class Post extends React.Component {
           />
 
           <input
+            className="area"
             type="textarea"
-            name="directions"
-            placeholder="Directions"
-            value={this.state.recipe.directions}
+            name="instructions"
+            placeholder="Instructions"
+            value={this.state.recipe.instructions}
             onChange={this.handleChange}
           />
 
           <button> Post </button>
+          <br />
+          <div className="add-button" onClick={()=>this.props.history.goBack()}> Cancel </div>
         </form>
       </div>
     );

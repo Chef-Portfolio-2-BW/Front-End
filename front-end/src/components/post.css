@@ -17,12 +17,12 @@
 }
 
 input {
-  padding: 12px;
-  margin: 15px 0;
-  font-size: 1.6rem;
+  padding: 8px;
+  margin: 10px 0;
+  font-size: 1rem;
 }
 
-button {
+.postButton {
   width: 150px;
   background-color: black;
   border: 3px solid #fd9827;
@@ -30,6 +30,15 @@ button {
   color: #fd9827;
   font-size: 1rem;
   padding: 4px;
-  margin-left: 15px;
-  margin-bottom: 15px;
+  margin: 30px 0 30px 0;
+}
+
+.area {
+  min-height: 140px;
+}
+
+select {
+  padding: 5px 55px;
+  font-size: 1.2rem;
+  margin: 10px 0;
 }

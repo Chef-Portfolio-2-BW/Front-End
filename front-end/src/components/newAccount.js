@@ -26,7 +26,7 @@ const NewAccountForm = (props) => {
   };
 
   return (
-    <div className="main">
+    <div className="main account">
       <section>
         <h1>Create a New Account</h1>
         <div className="form-container">
