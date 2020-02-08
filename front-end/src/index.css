@@ -132,13 +132,31 @@ code {
   color: white;
   border: 1px solid #fd9827;
   border-radius: 2px;
-  width: 30%;
+  width: 40%;
   margin: 1.25%;
   padding: 1%;
   outline: none;
+  white-space: nowrap;
 }
 
 .btn:hover{
+  box-shadow: 0 0 10px #fd9827;
+  color: black;
+  background-color: white;
+}
+.btn2 {
+  background-color: black;
+  color: white;
+  border: 1px solid #fd9827;
+  border-radius: 7px;
+  margin: 2.25%;
+  padding: 10%;
+  outline: none;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.btn2:hover{
   box-shadow: 0 0 10px #fd9827;
   color: black;
   background-color: white;
