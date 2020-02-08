@@ -44,7 +44,9 @@ const Profile = (props) => {
                              ))}
                         </CardDeck>
                             <Link to='/create'>
-                            <button className="add-button">
+
+                            <button className='btn2'>
+
                                 Create Post!
                             </button>
                             </Link>
