@@ -99,10 +99,10 @@ const App = props => {
             <PrivateRoute exact path="/create" component={Post} />
             <PrivateRoute exact path="/edit/:id" component={UpdateRecipe} name={selection.name} id={selection.id} />
           </Switch>
-          
+
         </div>
         <div className="footer">
-          <Footer />
+          <Footer {...props} />
         </div>
       </div>
     </div>
