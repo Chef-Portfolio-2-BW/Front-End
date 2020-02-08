@@ -24,7 +24,6 @@ const DetailDiv = styled.div`
 
 
 
-
 const RecipeDetail = (props) => {
 
     const [item, setItem] = useState({});
@@ -42,7 +41,6 @@ const RecipeDetail = (props) => {
             <img src={item.img} alt="{item.img}" />
             <h1>{item.name}</h1>
             <p>By: {item.username}</p>
-            <p>Category: {item.category}</p>
             <p>Ingredients: {item.ingredients}</p>
             <p>Instructions: {item.instructions}</p>
         </DetailDiv>
