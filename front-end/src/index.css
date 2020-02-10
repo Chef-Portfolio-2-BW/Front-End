@@ -66,6 +66,8 @@ code {
   font-size: 1rem;
   padding: 5px;
   margin-left: 15px;
+  text-align: center;
+  outline: none;
 }
 
 .main button:hover, .add-button:hover{
