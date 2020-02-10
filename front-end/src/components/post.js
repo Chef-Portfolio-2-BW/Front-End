@@ -58,7 +58,6 @@ class Post extends React.Component {
           />
 
           <select
-            className="pain"
             name="category"
             onChange={this.handleChange}
             value={this.state.recipe.category}
