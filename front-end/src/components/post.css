@@ -13,7 +13,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: left;
+  border-radius: 20px;
+  /* text-align: left; */
 }
 
 input {
@@ -22,7 +23,7 @@ input {
   font-size: 1rem;
 }
 
-.postButton {
+/* .postButton {
   width: 150px;
   background-color: black;
   border: 3px solid #fd9827;
@@ -31,6 +32,13 @@ input {
   font-size: 1rem;
   padding: 4px;
   margin: 30px 0 30px 0;
+} */
+.button-container{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 3%;
+  margin: 1%;
 }
 
 .area {
@@ -41,4 +49,25 @@ select {
   padding: 5px 55px;
   font-size: 1.2rem;
   margin: 10px 0;
+  border-radius: 10px;
+  border: 3px solid #fd9827;
+  width: 230px;
+  text-align: left;
+  background-color: black;
+  color: white;
+  outline: none;
 }
+
+input{
+  border-radius: 10px;
+  width: 210px;
+  background-color: black;
+  color: white;
+  border: 3px solid #fd9827;
+  outline: none;
+  text-align: center;
+}
+::placeholder{
+  text-align: center;
+}
+

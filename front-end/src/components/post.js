@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "./axiosAuth";
 
 import "./post.css";
+import '../index.css'
 
 class Post extends React.Component {
   state = {
@@ -51,12 +52,13 @@ class Post extends React.Component {
           <input
             type="text"
             name="name"
-            placeholder="Recipie Name"
+            placeholder="Recipe Name"
             value={this.state.recipe.name}
             onChange={this.handleChange}
           />
 
           <select
+            className="pain"
             name="category"
             onChange={this.handleChange}
             value={this.state.recipe.category}
@@ -97,9 +99,11 @@ class Post extends React.Component {
             onChange={this.handleChange}
           />
 
-          <button> Post </button>
+          <div className='button-container'>
+          <button className='add-button'> Post </button>
           <br />
-          <div className="add-button" onClick={()=>this.props.history.goBack()}> Cancel </div>
+          <button className="add-button" onClick={()=>this.props.history.goBack()}> Cancel </button>
+          </div>
         </form>
       </div>
     );
